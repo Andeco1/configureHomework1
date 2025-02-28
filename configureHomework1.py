@@ -55,6 +55,10 @@ def clear():
     scroll_text.delete(1.0,tk.END)
     scroll_text.insert(tk.END, current[1:]) 
     scroll_text.config(state=tk.DISABLED)
+def pwd():
+    scroll_text.config(state=tk.NORMAL)
+    scroll_text.insert(tk.END, "C:\\Users" + path)
+    scroll_text.config(state=tk.DISABLED)
 def cd(text):
     path = text.split()
     global current
@@ -84,8 +88,11 @@ def add_text(event=None):
         cat(text)
     elif text.startswith('echo'):
         echo(text)
+    elif text == "pwd":
+        pwd()
     elif text == "clear":
         clear()
+
     elif text.startswith('cd'):
         cd(text)
     else:
