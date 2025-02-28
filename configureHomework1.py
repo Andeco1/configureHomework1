@@ -102,7 +102,7 @@ def add_text(event=None):
         
 
 
-window = tk.Tk('750x350')
+window = tk.Tk('800x350')
 window.title("Эмулятор")
 
 
